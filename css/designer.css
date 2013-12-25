@@ -1,0 +1,33 @@
+.designer:before {
+    background: url("img/ruler-h.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+    content: "";
+    display: block;
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.designer:after {
+    background: url("http://spritepad.wearekiss.com/lib/css/../img/ruler-v.png") repeat-y scroll left top rgba(0, 0, 0, 0);
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 10px;
+}
+
+.designer {
+    padding-left: 10px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.canvas {
+    background: url("img/grid.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 3px rgba(185, 199, 212, 0.62);
+    position: relative;
+}

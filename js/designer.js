@@ -3,15 +3,19 @@
  *
  **/
 
-var Designer = function () {
+var UIDesigner = function () {
     this.designPanelId = null;
-
+    this.designCanvasId = null;
     this.page = null;
     this.init = function (json) {
-        this.designPanelId = json.designPanelId || "designer";
-        if ($($.getJqueryId(this.designPanelId)).length == 0) {
-            $("body").append("<div id=\"" + this.designPanelId + "\"></div>")
+        if (json == null) {
+            json = {type: ComponentTypes.PageComponent};
         }
+        this.designPanelId = json.designPanelId || "designer";
+        this.designCanvasId = json.designCanvasId || "designer-canvas";
+        json.id = this.designCanvasId;
+        json.type = UIComponentTypes.PageComponent;
+        this.page = window.UIComponentTypes.createComponent(json);
     };
     this.loadFromJson = function (json) {
         this.page = ComponentTypes.createComponent(json);
@@ -21,4 +25,4 @@ var Designer = function () {
     };
 };
 //将Designer注册到Window上
-window.Desinger = new Designer();
+window.UIDesigner = new UIDesigner();

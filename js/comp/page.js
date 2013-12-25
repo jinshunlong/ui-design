@@ -2,8 +2,10 @@
  * PageComponent，是跟组件
  * @type {*}
  */
-var PageComponent = $.extend(Component, {
-    onInit: function (json) {
-
+var PageComponent = function (json) {
+    Component.apply(this, new Array(json));
+    this.onInit = function (json) {
+        $($.getJqueryId(this.id)).resizable();
     }
-});
+
+};

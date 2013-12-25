@@ -10,8 +10,11 @@ var ComponentType = function (json) {
     this.properties = json.properties;
     this.createComponent = function (json) {
         if (json.type == null) {
-            json.type = "Component";
+            json.type = ComponentTypes.Component;
         }
+        var comp = eval("(new " + json.type + "(json))");
+        comp.init(json);
+        return comp;
     }
 };
 var ComponentTypes = function () {
@@ -19,15 +22,15 @@ var ComponentTypes = function () {
     this.registerType = function (componentType) {
         this.types.put(componentType.name, componentType);
     };
-    this.getType = function (type) {
+    this.getComponentType = function (type) {
         if (type == null) {
             type = "Component";
         }
         return this.types.get(type);
     };
     this.createComponent = function (json) {
-        var type = this.getType(json.type);
-        return type.createComponent(json);
+        var compType = this.getComponentType(json.type);
+        return compType.createComponent(json);
     };
     this.isType = function (comp, type) {
         if (comp.type == type) {
@@ -39,8 +42,13 @@ var ComponentTypes = function () {
     this.PageComponent = "PageComponent";
 };
 
-window.ComponentTypes = new ComponentTypes();
-ComponentTypes.registerType(new ComponentType({
-    name: ComponentType.Component,
-    description: ComponentType.Component
+window.UIComponentTypes = new ComponentTypes();
+UIComponentTypes.registerType(new ComponentType({
+    name: UIComponentTypes.Component,
+    description: UIComponentTypes.Component
+}));
+
+UIComponentTypes.registerType(new ComponentType({
+    name: UIComponentTypes.PageComponent,
+    description: UIComponentTypes.PageComponent
 }));

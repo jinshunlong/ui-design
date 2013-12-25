@@ -9,20 +9,21 @@ var Component = function (json) {
     this.height = json.height;//控件高度
     this.html = json.html || "";//控件初始Html
 
-    this.parentId = $.getDefaultIfNull(json.parentId, Desinger.designPanelId);//父控件
+    this.parentId = $.getDefaultIfNull(json.parentId, UIDesigner.designPanelId);//父控件
     this.parentChildId = $.getDefaultIfNull(json.parentChildId, null);//在父控件中的位置
     this.childIdMap = new HashMap();//子控件集合存储Id
     this.designable = true;//控件可设计
     this.hasProperty = true;//是否有属性
 
     this.getType = function () {
-        return ComponentTypes.getType(this.type);
+        return ComponentTypes.getComponentType(this.type);
     };
 
     /**
      * 留着初始化使用的
      */
-    this.onInit = function (json) {
+    this.init = function (json) {
+        this.onInit(json);
+
     };
-    this.onInit(json);
 }
