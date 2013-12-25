@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UI Designer -- 通用设计器</title>
+    <link href="css/flick/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/designer.js"></script>
+    <script src="js/component.js"></script>
+    <script src="js/component-type.js"></script>
+    <script src="js/comp/input.js"></script>
+    <script src="js/comp/page.js"></script>
+    <script>
+        $(function () {
+            Utils.init({});
+            Utils.confirm({
+                message: "测试一下",
+                callback: function () {
+                    alert(111);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="designer"></div>
+</body>
+</html>
