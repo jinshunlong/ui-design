@@ -4,8 +4,12 @@
  */
 var PageComponent = function (json) {
     Component.apply(this, new Array(json));
-    this.onInit = function (json) {
-        $($.getJqueryId(this.id)).resizable();
+    this.id = "designer-canvas";
+    this.draggable = false;
+    this.dropAble = true;
+    this.onInitEvent = function () {
+        $.$(this).resizable();
+        this.makeSelectable();
+        this.makeDroppable();
     }
-
 };

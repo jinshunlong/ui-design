@@ -10,7 +10,7 @@
 }
 
 .designer:after {
-    background: url("http://spritepad.wearekiss.com/lib/css/../img/ruler-v.png") repeat-y scroll left top rgba(0, 0, 0, 0);
+    background: url("img/ruler-v.png") repeat-y scroll left top rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     display: block;
@@ -30,4 +30,60 @@
     background: url("img/grid.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
     box-shadow: 0 0 3px rgba(185, 199, 212, 0.62);
     position: relative;
+}
+
+.comp-select {
+    BORDER-RIGHT: #a8e61d 1px dashed;
+    BORDER-TOP: #a8e61d 1px dashed;
+    BORDER-LEFT: #a8e61d 1px dashed;
+    BORDER-BOTTOM: #a8e61d 1px dashed
+}
+
+.comp-div {
+    BORDER-RIGHT: rgba(168, 230, 29, 0.27) 1px dashed;
+    BORDER-TOP: rgba(168, 230, 29, 0.27) 1px dashed;
+    BORDER-LEFT: rgba(168, 230, 29, 0.27) 1px dashed;
+    BORDER-BOTTOM: rgba(168, 230, 29, 0.27) 1px dashed
+}
+
+.comp-action {
+    cursor: move;
+    display: block;
+    font-size: 0.1px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 7px;
+}
+
+.ui-resizable-helper {
+    border: 2px dotted #00F;
+}
+
+#feedback {
+    font-size: 1.4em;
+}
+
+#selectable .ui-selecting {
+    background: #FECA40;
+}
+
+#selectable .ui-selected {
+    background: #F39814;
+    color: white;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60%;
+}
+
+#selectable li {
+    margin: 3px;
+    padding: 0.4em;
+    font-size: 1.4em;
+    height: 18px;
 }
